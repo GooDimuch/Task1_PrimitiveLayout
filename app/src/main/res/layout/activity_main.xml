@@ -5,7 +5,7 @@
     android:id="@+id/main_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackGround"
+    android:background="@color/colorBackGroundActivity"
     tools:context="com.example.dimuch.task1_primitivelayout.MainActivity">
 
     <TextView

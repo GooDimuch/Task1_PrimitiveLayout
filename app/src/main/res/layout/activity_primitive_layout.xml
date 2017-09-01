@@ -1,98 +1,427 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackGround"
+    android:background="@color/colorBackGroundActivity"
     android:orientation="vertical"
     tools:context="com.example.dimuch.task1_primitivelayout.PrimitiveLayout">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="128dp"
-            android:layout_height="128dp"
-            android:layout_margin="8dp"
-            android:layout_weight="0"
-            app:srcCompat="@mipmap/ic_launcher" />
+    <ImageView
+        android:id="@+id/ivPersonAvatar"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+
+    <TextView
+        android:id="@+id/tvPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/ivPersonAvatar"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <TextView
+        android:id="@+id/tvPersonOnlineStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toRightOf="@+id/ivPersonAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/tvPersonName"
+        tools:layout_conversion_absoluteHeight="16dp"
+        tools:layout_conversion_absoluteWidth="58dp"
+        tools:layout_conversion_absoluteX="144dp"
+        tools:layout_conversion_absoluteY="29dp" />
+
+    <TextView
+        android:id="@+id/tvPersonOld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toRightOf="@+id/ivPersonAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/tvPersonOnlineStatus"
+        tools:layout_conversion_absoluteHeight="82dp"
+        tools:layout_conversion_absoluteWidth="58dp"
+        tools:layout_conversion_absoluteX="144dp"
+        tools:layout_conversion_absoluteY="62dp" />
+
+
+    <ImageButton
+        android:id="@+id/ibArrowDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPersonAvatar"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivPersonAvatar"
+        app:srcCompat="@drawable/arrow_down"
+        tools:layout_conversion_absoluteHeight="136dp"
+        tools:layout_conversion_absoluteWidth="24dp"
+        tools:layout_conversion_absoluteX="356dp"
+        tools:layout_conversion_absoluteY="4dp" />
+
+
+    <Button
+        android:id="@+id/bPersonalMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary"
+        android:text="@string/personalMessage"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/bAddFriend"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/bAddFriend"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bAddFriend"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="184dp"
+        tools:layout_conversion_absoluteX="195dp"
+        tools:layout_conversion_absoluteY="148dp" />
+
+    <Button
+        android:id="@+id/bAddFriend"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary"
+        android:elevation="0dp"
+        android:text="@string/addToFriends"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/bPersonalMessage"
+        app:layout_constraintTop_toBottomOf="@+id/ivPersonAvatar"
+        tools:layout_conversion_absoluteHeight="48dp"
+        tools:layout_conversion_absoluteWidth="183dp"
+        tools:layout_conversion_absoluteX="4dp"
+        tools:layout_conversion_absoluteY="148dp" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvAllFriends"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/colorBackGroundButton"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/cvCommonFriends"
+        app:layout_constraintTop_toBottomOf="@+id/bAddFriend">
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/tvNumberAllFriends"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_weight="0"
+                android:layout_gravity="left|start"
                 android:text="TextView"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tvAllFriends"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
+                android:layout_gravity="bottom|left|start"
                 android:text="TextView"
                 android:textColor="@android:color/darker_gray" />
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvCommonFriends"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/colorBackGroundButton"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/cvAllFriends"
+        app:layout_constraintRight_toLeftOf="@+id/cvSubscribers"
+        app:layout_constraintTop_toBottomOf="@+id/bAddFriend">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/tvNumberCommonFriends"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_gravity="left|start"
+                android:text="TextView"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvCommonFriends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left|start"
+                android:text="TextView"
+                android:textColor="@android:color/darker_gray" />
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvSubscribers"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/colorBackGroundButton"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/cvCommonFriends"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bAddFriend">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvNumberSubscribers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|start"
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSubscribers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left|start"
                 android:layout_weight="1"
                 android:text="TextView"
                 android:textColor="@android:color/darker_gray" />
 
         </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="4dp"
-            android:layout_weight="0" />
+    </android.support.v7.widget.CardView>
 
-    </LinearLayout>
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvPhotos"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/colorBackGroundButton"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/cvVideos"
+        app:layout_constraintTop_toBottomOf="@+id/cvAllFriends">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:layout_weight="1"
-            android:background="@color/colorPrimary"
-            android:elevation="0dp"
-            android:text="@string/addToFriends"
-            android:textAllCaps="false"
-            android:textColor="@android:color/white" />
-
-        <Button
-            android:id="@+id/button2"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:layout_weight="1"
-            android:background="@color/colorPrimary"
-            android:text="@string/personalMessage"
-            android:textAllCaps="false"
-            android:textColor="@android:color/white" />
-    </LinearLayout>
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:orientation="vertical">
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/tvNumberPhotos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|start"
+                android:text="TextView"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPhotos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left|start"
+                android:text="TextView"
+                android:textColor="@android:color/darker_gray" />
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvVideos"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/colorBackGroundButton"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/cvPhotos"
+        app:layout_constraintRight_toLeftOf="@+id/cvAudios"
+        app:layout_constraintTop_toBottomOf="@+id/cvCommonFriends">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvNumberVideos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|start"
+                android:text="TextView"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvVideos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left|start"
+                android:text="TextView"
+                android:textColor="@android:color/darker_gray" />
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvAudios"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/colorBackGroundButton"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/cvVideos"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvSubscribers">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvNumberAudios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|start"
+                android:text="TextView"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvAudios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left|start"
+                android:text="TextView"
+                android:textColor="@android:color/darker_gray" />
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvPhotos"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvVideos" />
+
+
+</android.support.constraint.ConstraintLayout>
