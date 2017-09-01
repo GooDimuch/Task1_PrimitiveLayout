@@ -2,7 +2,8 @@
 <resources>
     <color name="colorPrimary">#507caf</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#18b1e7</color>
     <color name="colorBackGroundActivity">#313743</color>
     <color name="colorBackGroundButton">#242833</color>
+    <color name="colorBackGroundCoordinator">#e3e4e6</color>
 </resources>

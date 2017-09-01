@@ -36,6 +36,11 @@ public class PersonProfile {
         lIdPhotos.add(R.drawable.a1);
         lIdPhotos.add(R.drawable.a2);
         lIdPhotos.add(R.drawable.a3);
+        lIdPhotos.add(R.drawable.a3);
+        lIdPhotos.add(R.drawable.a2);
+        lIdPhotos.add(R.drawable.a3);
+        lIdPhotos.add(R.drawable.a2);
+        lIdPhotos.add(R.drawable.a1);
     }
 
     public List<Integer> getlIdPhotos() {

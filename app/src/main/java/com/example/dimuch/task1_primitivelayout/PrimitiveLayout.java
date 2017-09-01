@@ -1,5 +1,7 @@
 package com.example.dimuch.task1_primitivelayout;
 
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,16 +11,12 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.List;
-
 public class PrimitiveLayout extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_primitive_layout);
-
-        tuningAppBar();
 
         int iIdPerson = getIntent().getIntExtra(MainActivity.EXTRA_MESSAGE, -1);
 
@@ -28,10 +26,24 @@ public class PrimitiveLayout extends AppCompatActivity{
         RecyclerView rvPhotos = (RecyclerView) findViewById(R.id.rvPhotos);
         LinearLayoutManager llm = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
         rvPhotos.setLayoutManager(llm);
-        RVAdapter adapter = new RVAdapter(profile.getlIdPhotos());
+        RVAdapterForPhotos adapter = new RVAdapterForPhotos(profile.getlIdPhotos());
         rvPhotos.setAdapter(adapter);
 
 
+
+        ViewPager viewPager = (ViewPager) findViewById(R.id.vpNewsFeed);
+        setupViewPager(viewPager);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tlNewsFeed);
+        tabLayout.setupWithViewPager(viewPager);
+
+
+    }
+
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new AllNewsFragment(), "Все записи");
+        adapter.addFragment(new PersonNewsFragment(), "Записи Элвиса");
+        viewPager.setAdapter(adapter);
     }
 
     private void fillViews(PersonProfile profile) {
@@ -66,20 +78,6 @@ public class PrimitiveLayout extends AppCompatActivity{
         tvNumberAudios.setText(profile.getsPersonNumberAudios());
         TextView tvAudios = (TextView) findViewById(R.id.tvAudios);
         tvAudios.setText(profile.getsPersonAudios());
-    }
-
-    private void tuningAppBar() {
-        android.support.v7.app.ActionBar supportActionBar = getSupportActionBar();
-        supportActionBar.setDisplayShowHomeEnabled(false);
-        supportActionBar.setDisplayShowTitleEnabled(false);
-        LayoutInflater mInflater = LayoutInflater.from(this);
-
-        View mCustomView = mInflater.inflate(R.layout.custom_profile_app_bar, null);
-        TextView mTitleTextView = (TextView) mCustomView.findViewById(R.id.title_text);
-        mTitleTextView.setText("Профиль");
-
-        supportActionBar.setCustomView(mCustomView);
-        supportActionBar.setDisplayShowCustomEnabled(true);
     }
 
     @Override

@@ -1,6 +1,5 @@
 package com.example.dimuch.task1_primitivelayout;
 
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,11 +8,11 @@ import android.widget.ImageView;
 
 import java.util.List;
 
-public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> {
+public class RVAdapterForPhotos extends RecyclerView.Adapter<RVAdapterForPhotos.PersonViewHolder> {
 
-    List<Integer> lIdPhotos;
+    private List<Integer> lIdPhotos;
 
-    public RVAdapter(List<Integer> lIdPhotos) {
+    public RVAdapterForPhotos(List<Integer> lIdPhotos) {
         this.lIdPhotos = lIdPhotos;
     }
 
@@ -23,15 +22,14 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder> 
 
         PersonViewHolder(View itemView) {
             super(itemView);
-            personPhoto = (ImageView) itemView.findViewById(R.id.person_photo);
+            personPhoto = (ImageView) itemView.findViewById(R.id.personPhoto);
         }
     }
 
     @Override
     public PersonViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_list_view_photos, viewGroup, false);
-        PersonViewHolder pvh = new PersonViewHolder(v);
-        return pvh;
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_recycle_list_view_photos, viewGroup, false);
+        return new PersonViewHolder(v);
     }
 
     @Override
