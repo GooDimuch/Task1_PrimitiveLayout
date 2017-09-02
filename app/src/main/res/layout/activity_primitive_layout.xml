@@ -5,13 +5,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/colorBackGroundActivity"
         android:orientation="vertical"
         tools:context="com.example.dimuch.task1_primitivelayout.PrimitiveLayout">
@@ -435,8 +435,6 @@
         <android.support.constraint.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"
             android:layout_marginTop="8dp"
             android:background="@color/colorBackGroundCoordinator"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -476,7 +474,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tlNewsFeed" />

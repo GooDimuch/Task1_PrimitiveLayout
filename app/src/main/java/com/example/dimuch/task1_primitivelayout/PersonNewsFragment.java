@@ -23,13 +23,14 @@ public class PersonNewsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.news_fragment, container, false);
+        View view = inflater.inflate(R.layout.personal_news_fragment, container, false);
 
-        RecyclerView rvPersonalNews = (RecyclerView) view.findViewById(R.id.rvNews);
+        RecyclerView rvPersonalNews = (RecyclerView) view.findViewById(R.id.rvPersonalNews);
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         rvPersonalNews.setLayoutManager(llm);
         RVAdapterForNews adapter = new RVAdapterForNews(sendNewsPhoto(), sendNewsName(), sendNewsDate(), sendNewsNews());
         rvPersonalNews.setAdapter(adapter);
+        rvPersonalNews.setNestedScrollingEnabled(false);
 
         return view;
     }

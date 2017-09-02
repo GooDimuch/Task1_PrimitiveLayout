@@ -24,13 +24,14 @@ public class AllNewsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.news_fragment, container, false);
+        View view = inflater.inflate(R.layout.all_news_fragment, container, false);
 
-        RecyclerView rvAllNews = (RecyclerView) view.findViewById(R.id.rvNews);
+        RecyclerView rvAllNews = (RecyclerView) view.findViewById(R.id.rvAllNews);
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         rvAllNews.setLayoutManager(llm);
         RVAdapterForNews adapter = new RVAdapterForNews(sendNewsPhoto(), sendNewsName(), sendNewsDate(), sendNewsNews());
         rvAllNews.setAdapter(adapter);
+        rvAllNews.setNestedScrollingEnabled(false);
 
         return view;
     }
