@@ -16,7 +16,7 @@ public class PrimitiveLayout extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_primitive_layout);
+        setContentView(R.layout.test_layout);
 
         int iIdPerson = getIntent().getIntExtra(MainActivity.EXTRA_MESSAGE, -1);
 

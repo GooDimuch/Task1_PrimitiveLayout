@@ -28,6 +28,7 @@ public class AllNewsFragment extends Fragment {
 
         RecyclerView rvAllNews = (RecyclerView) view.findViewById(R.id.rvAllNews);
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
+        llm.setAutoMeasureEnabled(true);
         rvAllNews.setLayoutManager(llm);
         RVAdapterForNews adapter = new RVAdapterForNews(sendNewsPhoto(), sendNewsName(), sendNewsDate(), sendNewsNews());
         rvAllNews.setAdapter(adapter);
