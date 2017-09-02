@@ -448,6 +448,18 @@
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/rvPhotos">
 
+            <android.support.design.widget.TabItem
+                android:id="@+id/tabItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Все записи" />
+
+            <android.support.design.widget.TabItem
+                android:id="@+id/tabItem2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Записи Элвиса" />
+
         </android.support.design.widget.TabLayout>
 
         <ImageButton
@@ -462,13 +474,15 @@
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/edit" />
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/vpNewsFeed"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvNews"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@color/colorBackGroundCoordinator"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

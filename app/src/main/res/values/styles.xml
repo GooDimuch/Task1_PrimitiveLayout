@@ -6,6 +6,13 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionOverflowButtonStyle">@style/CustomOverflowButton</item>
+        <item name="android:actionOverflowButtonStyle">@style/CustomOverflowButton</item>
+    </style>
+
+    <style name="CustomOverflowButton" parent="Widget.AppCompat.Light.ActionButton.Overflow">
+        <!-- Customize your theme here. -->
+        <item name="android:src">@drawable/overflow</item>
     </style>
 
 </resources>
